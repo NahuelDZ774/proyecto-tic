@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto escolar de TIC sobre el impacto de la tecnología en las relaciones sociales.">
-    <title>Tecnología y Relaciones Sociales | Proyecto TIC</title>
+    <meta name="description" content="Proyecto escolar de TIC sobre la tecnología y la sociedad.">
+    <title>Tecnología y Redes Sociales | Proyecto TIC</title>
     <style>
-        /* Variables globales para la paleta de colores */
+        /* Variables globales con la nueva paleta de colores moderna */
         :root {
-            --primary-blue: #003366;
-            --secondary-bg: #f4f7f6;
-            --text-dark: #2c3e50;
-            --accent-cyan: #17a2b8;
+            --primary-blue: #5b21b6; /* Violeta tecnológico */
+            --secondary-bg: #f3f4f6; /* Gris claro */
+            --text-dark: #1f2937;    /* Texto oscuro suave */
+            --accent-cyan: #06b6d4;  /* Cian brillante */
             --white: #ffffff;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow: rgba(0, 0, 0, 0.08);
         }
 
-        /* Estilos base y reseteo */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -31,10 +30,9 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Encabezado principal */
         header {
-            background: linear-gradient(135deg, var(--primary-blue), #00509e);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-blue), #3b0764);
+            color: #ffffff;
             text-align: center;
             padding: 3rem 1rem;
             box-shadow: 0 4px 6px var(--shadow);
@@ -51,12 +49,11 @@
             opacity: 0.9;
         }
 
-        /* Barra de navegación */
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #001f3f;
+            background-color: #2e1065;
             padding: 1rem;
             position: sticky;
             top: 0;
@@ -65,7 +62,7 @@
         }
 
         nav a {
-            color: var(--white);
+            color: #ffffff;
             text-decoration: none;
             margin: 0.5rem 1rem;
             font-weight: 600;
@@ -76,10 +73,9 @@
             color: var(--accent-cyan);
         }
 
-        /* Botón de interacción */
         .btn-theme {
             background-color: var(--accent-cyan);
-            color: var(--white);
+            color: #ffffff;
             border: none;
             padding: 0.5rem 1rem;
             margin-left: 1rem;
@@ -90,24 +86,22 @@
         }
 
         .btn-theme:hover {
-            background-color: #138496;
+            background-color: #0891b2;
         }
 
-        /* Contenedor principal */
         main {
             max-width: 1100px;
             margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
-        /* Secciones de contenido */
         section {
             background-color: var(--white);
             padding: 2.5rem;
             margin-bottom: 2.5rem;
             border-radius: 8px;
             box-shadow: 0 5px 15px var(--shadow);
-            scroll-margin-top: 80px; /* Para la navegación anclada */
+            scroll-margin-top: 80px;
         }
 
         h2 {
@@ -133,7 +127,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sistema de cuadrícula para tarjetas */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -159,36 +152,65 @@
             font-size: 1.3rem;
         }
 
-        /* Pie de página */
+        /* Estilos específicos para la Carátula */
+        .caratula-section {
+            border-left: 5px solid var(--primary-blue);
+            background-color: var(--secondary-bg);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 6px;
+        }
+
+        .caratula-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-cyan);
+            display: inline-block;
+            padding-bottom: 0.2rem;
+            font-size: 1.4rem;
+        }
+
+        .caratula-section dt {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 0.8rem;
+        }
+
+        .caratula-section dd {
+            margin-left: 1.2rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
         footer {
-            background-color: #001f3f;
-            color: var(--white);
+            background-color: #2e1065;
+            color: #ffffff;
             text-align: center;
             padding: 2rem 1rem;
             margin-top: 4rem;
         }
 
-        /* Tema Oscuro (Dark Mode) */
+        /* Tema Oscuro (Dark Mode) adaptado a los nuevos colores */
         body.dark-mode {
-            --primary-blue: #66b2ff;
-            --secondary-bg: #121212;
-            --text-dark: #e0e0e0;
-            --white: #1e1e1e;
+            --primary-blue: #a78bfa; 
+            --secondary-bg: #111827;
+            --text-dark: #f3f4f6;
+            --white: #1f2937;
             --shadow: rgba(255, 255, 255, 0.05);
         }
 
         body.dark-mode header {
-            background: linear-gradient(135deg, #1a1a1a, #000000);
-            border-bottom: 1px solid #333;
+            background: linear-gradient(135deg, #111827, #000000);
+            border-bottom: 1px solid #374151;
         }
 
         body.dark-mode nav, body.dark-mode footer {
-            background-color: #0a0a0a;
-            border-top: 1px solid #333;
+            background-color: #030712;
+            border-top: 1px solid #374151;
         }
 
-        body.dark-mode .card {
-            background-color: #2a2a2a;
+        body.dark-mode .card, body.dark-mode .caratula-section {
+            background-color: #374151;
         }
     </style>
 </head>
@@ -196,116 +218,123 @@
 
     <header>
         <h1>Tecnología y Sociedad</h1>
-        <p>Redefiniendo las Relaciones Humanas en el Entorno Digital</p>
+        <p>Cómo cambia nuestra forma de relacionarnos en 2026</p>
     </header>
 
     <nav>
         <a href="#introduccion">Introducción</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#desafios">Desafíos Críticos</a>
-        <a href="#tendencias">Perspectiva 2026</a>
+        <a href="#desafios">Problemas</a>
+        <a href="#tendencias">Lo Actual</a>
+        <a href="#conclusion">Conclusión</a>
         <button id="toggle-theme" class="btn-theme">Activar Modo Oscuro</button>
     </nav>
 
     <main>
-        <section id="caratula" style="border-left: 5px solid #003366; background-color: #f8f9fa; padding: 2rem; margin-bottom: 2.5rem; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    <h3 style="color: #003366; margin-bottom: 1.5rem; border-bottom: 2px solid #17a2b8; display: inline-block; padding-bottom: 0.2rem; font-size: 1.4rem;">Información del Proyecto</h3>
-    
-    <p style="margin-bottom: 1.2rem; font-size: 1.1rem;">
-        <strong>Institución:</strong> Escuela N°6: "Héroes de Malvinas"
-    </p>
-    
-    <p style="margin-bottom: 0.5rem; font-size: 1.1rem;"><strong>Integrantes y Roles:</strong></p>
-    <dl style="margin-left: 1.5rem; margin-bottom: 1.2rem;">
-        <dt style="font-weight: bold; color: #003366; margin-top: 0.8rem;">• Nahuel E. Zapata</dt>
-        <dd style="margin-left: 1.2rem; color: #555; font-style: italic;">(encargado de hacer toda la pagina web)</dd>
-        
-        <dt style="font-weight: bold; color: #003366; margin-top: 0.8rem;">• Ignacio "Nacho" D. Monti</dt>
-        <dd style="margin-left: 1.2rem; color: #555; font-style: italic;">(encargado de resumir todo el material elegido y dictar, embelleciendo el texto)</dd>
-    </dl>
-    
-    <p style="margin-top: 1rem; font-size: 1rem; color: #7f8c8d;">
-        <strong>Asignatura:</strong> Tecnologías de la Información y la Comunicación (TIC) &mdash; Año 2026
-    </p>
+        <!-- Carátula del Proyecto -->
+        <section id="caratula" class="caratula-section">
+            <h3>Información del Proyecto</h3>
+            
+            <p><strong>Institución:</strong> Escuela N°6: "Héroes de Malvinas"</p>
+            
+            <p><strong>Integrantes y Roles:</strong></p>
+            <dl style="margin-left: 1.5rem; margin-bottom: 1.2rem;">
+                <dt>• Nahuel E. Zapata</dt>
+                <dd>(encargado de hacer toda la pagina web)</dd>
+                
+                <dt>• Ignacio "Nacho" D. Monti</dt>
+                <dd>(encargado de resumir todo el material elegido y dictar, embelleciendo el texto)</dd>
+            </dl>
+            
+            <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.8;">
+                <strong>Asignatura:</strong> Tecnologías de la Información y la Comunicación (TIC) &mdash; Año 2026
+            </p>
         </section>
+
         <section id="introduccion">
-            <h2>El Paradigma de la Comunicación Digital</h2>
-            <p>La integración de las Tecnologías de la Información y la Comunicación (TIC) en la vida diaria ha transformado radicalmente la estructura de las interacciones humanas. Ya no nos limitamos a utilizar herramientas digitales para enviar mensajes; habitamos ecosistemas virtuales complejos que moldean nuestra identidad, nuestras opiniones y nuestra forma de vincularnos con los demás.</p>
-            <p>Este trabajo analiza cómo la mediación tecnológica actúa como un puente que elimina distancias físicas, pero simultáneamente introduce nuevas dinámicas psicológicas y sociales que requieren un análisis profundo y objetivo.</p>
+            <h2>¿Cómo nos comunicamos hoy en día?</h2>
+            <p>Usar internet y el celular ya es parte de nuestra rutina diaria. Ya no nos limitamos a mandar mensajes de texto, sino que armamos grupos, compartimos lo que pensamos y construimos nuestra imagen en línea. Las redes sociales son el lugar donde pasamos gran parte de nuestro tiempo libre.</p>
+            <p>En este trabajo escolar analizamos cómo la tecnología actúa como un puente que nos acerca a personas de todo el mundo, pero también nos fijamos en los problemas que nos trae si no la usamos con cuidado y responsabilidad.</p>
         </section>
 
         <section id="beneficios">
-            <h2>Beneficios de la Conectividad Global</h2>
-            <p>El desarrollo de infraestructuras de red avanzadas y dispositivos móviles ha democratizado el acceso a la socialización en múltiples niveles:</p>
+            <h2>Las cosas buenas de estar conectados</h2>
+            <p>Tener acceso a internet desde el teléfono nos ha dado muchas ventajas para relacionarnos con los demás:</p>
             <div class="grid-layout">
                 <div class="card">
-                    <h3>Preservación de Vínculos a Distancia</h3>
-                    <p>Las plataformas de videollamada de alta fidelidad y la mensajería asíncrona permiten mantener relaciones interpersonales estrechas sin importar las barreras geográficas, facilitando la cohesión familiar y profesional.</p>
+                    <h3>Mantener amistades a distancia</h3>
+                    <p>Las videollamadas y los chats nos ayudan a seguir hablando todos los días con familiares o amigos que viven lejos sin que cueste dinero extra.</p>
                 </div>
                 <div class="card">
-                    <h3>Comunidades de Interés Específico</h3>
-                    <p>Internet proporciona espacios seguros donde los individuos pueden encontrar grupos afines basados en intereses, aficiones o necesidades de apoyo mutuo que serían difíciles de localizar en su entorno físico inmediato.</p>
+                    <h3>Conocer gente con los mismos gustos</h3>
+                    <p>Internet nos permite encontrar comunidades seguras para hablar de juegos, música, series o cualquier pasatiempo que nos interese.</p>
                 </div>
                 <div class="card">
-                    <h3>Expansión del Capital Social</h3>
-                    <p>Las redes profesionales digitales permiten la creación de lazos débiles pero numerosos, los cuales son fundamentales para el intercambio de conocimientos, el desarrollo académico y las oportunidades laborales.</p>
+                    <h3>Ayuda para estudiar</h3>
+                    <p>Estar en red nos permite pasarnos apuntes rápidamente, armar trabajos en grupo por videollamada y buscar información para la escuela en cuestión de segundos.</p>
                 </div>
             </div>
         </section>
 
         <section id="desafios">
-            <h2>Desafíos y Consecuencias Subyacentes</h2>
-            <p>El análisis desde la perspectiva de las TIC no estaría completo sin abordar las fricciones que surgen cuando la tecnología intermedia constantemente en el tejido social:</p>
+            <h2>Los problemas que traen las pantallas</h2>
+            <p>No todo es perfecto. Cuando usamos demasiada tecnología para comunicarnos, empiezan a aparecer situaciones complicadas:</p>
             <ul>
-                <li><strong>La Paradoja de la Soledad Conectada:</strong> A pesar de estar en constante comunicación técnica, los individuos pueden experimentar un aislamiento emocional severo si las interacciones digitales carecen de profundidad empática.</li>
-                <li><strong>El Efecto de las Cámaras de Eco:</strong> Los algoritmos de recomendación, diseñados para retener la atención del usuario, tienden a mostrar únicamente contenido que refuerza las creencias preexistentes, reduciendo la tolerancia hacia perspectivas divergentes y polarizando a la sociedad.</li>
-                <li><strong>Presión de la Huella Digital:</strong> La gestión continua de la identidad en línea y la exposición pública de los logros personales generan fenómenos de comparación constante, impactando negativamente en la autoestima de las poblaciones más vulnerables.</li>
+                <li><strong>Estar conectados pero sentirnos solos:</strong> A veces, aunque tengamos muchos seguidores o contactos, nos podemos sentir aislados porque nos falta contacto físico y real con las personas.</li>
+                <li><strong>Ver solo lo que nos gusta:</strong> Las aplicaciones están programadas para mostrarnos siempre las mismas opiniones y videos, lo que hace que nos cueste escuchar o entender a los que piensan distinto a nosotros.</li>
+                <li><strong>Las comparaciones y la autoestima:</strong> Ver la vida "perfecta" de los demás en fotos de Instagram o TikTok hace que muchas personas se comparen y se sientan mal con su propia vida.</li>
             </ul>
         </section>
 
         <section id="tendencias">
-            <h2>Perspectivas y Tendencias en 2026</h2>
-            <p>En el contexto del año 2026, observamos una evolución hacia un uso más consciente e integrado de las herramientas digitales. La sociedad y la industria tecnológica están implementando respuestas a los desafíos de la década anterior:</p>
+            <h2>Lo que está pasando en 2026</h2>
+            <p>En la actualidad, nos estamos dando cuenta de que tenemos que usar las aplicaciones de una manera más sana e inteligente:</p>
             <div class="grid-layout">
                 <div class="card">
-                    <h3>Bienestar Digital Integrado</h3>
-                    <p>Los dispositivos ahora incluyen análisis de hábitos en tiempo real que fomentan la "desconexión consciente", promoviendo interacciones físicas y limitando el diseño adictivo de las aplicaciones.</p>
+                    <h3>Cuidar nuestro tiempo</h3>
+                    <p>Los celulares ahora traen herramientas que nos avisan cuando pasamos muchas horas mirando la pantalla para ayudarnos a desconectar y salir un poco de casa.</p>
                 </div>
                 <div class="card">
-                    <h3>Interacción Asistida por Inteligencia Artificial</h3>
-                    <p>La IA ha pasado de ser una herramienta de consulta a un mediador en las relaciones sociales, ayudando a organizar encuentros, traducir idiomas en tiempo real y moderar entornos virtuales para reducir la toxicidad.</p>
+                    <h3>Inteligencia Artificial para ayudar</h3>
+                    <p>La IA ya no solo sirve para hacer preguntas, sino que ayuda a moderar los comentarios tóxicos o agresivos en los juegos y redes sociales para que el ambiente sea más seguro.</p>
                 </div>
             </div>
         </section>
+
+        <!-- Sección de Conclusión agregada aquí -->
+        <section id="conclusion">
+            <h2>Conclusión Final</h2>
+            <p>Como conclusión de este trabajo de TIC, podemos afirmar que la tecnología no es buena ni mala por sí misma, sino que su impacto depende totalmente de la responsabilidad con la que la usamos en el día a día.</p>
+            <p>Las herramientas digitales nos abren un mundo lleno de oportunidades para estudiar, trabajar y mantenernos cerca de las personas que queremos sin importar la distancia, pero también descubrimos que dependemos demasiado de las pantallas y que los algoritmos muchas veces controlan lo que vemos y pensamos.</p>
+            <p>El verdadero desafío para nuestra generación es encontrar un equilibrio sano entre la vida virtual y el mundo real, aprendiendo a cuidar nuestra privacidad y a construir vínculos humanos reales que no se pierdan através de una red social o una aplicación de mensajería.</p>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Proyecto Escolar de TIC. Material desarrollado con fines académicos.</p>
-           
+        <p>&copy; 2026 Trabajo Escolar de TIC. Material desarrollado con fines académicos.</p>
+        <p>Escuela N°6: "Héroes de Malvinas"</p>
     </footer>
 
     <script>
-        // Lógica de JavaScript para el botón de Modo Oscuro/Claro
         document.addEventListener('DOMContentLoaded', () => {
             const themeButton = document.getElementById('toggle-theme');
             const bodyElement = document.body;
 
             themeButton.addEventListener('click', () => {
-                // Alterna la clase 'dark-mode' en la etiqueta body
                 bodyElement.classList.toggle('dark-mode');
                 
-                // Cambia el texto del botón según el estado actual
                 if (bodyElement.classList.contains('dark-mode')) {
                     themeButton.textContent = 'Activar Modo Claro';
-                    themeButton.style.backgroundColor = '#66b2ff';
-                    themeButton.style.color = '#121212';
+                    themeButton.style.backgroundColor = '#a78bfa';
+                    themeButton.style.color = '#111827';
                 } else {
                     themeButton.textContent = 'Activar Modo Oscuro';
                     themeButton.style.backgroundColor = 'var(--accent-cyan)';
-                    themeButton.style.color = 'var(--white)';
+                    themeButton.style.color = '#ffffff';
                 }
             });
         });
     </script>
 </body>
-</html>
+    </html>
