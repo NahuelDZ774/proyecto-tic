@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto escolar de TIC sobre el impacto de la tecnología en las relaciones sociales.">
+    <title>Tecnología y Relaciones Sociales | Proyecto TIC</title>
+    <style>
+        /* Variables globales para la paleta de colores */
+        :root {
+            --primary-blue: #003366;
+            --secondary-bg: #f4f7f6;
+            --text-dark: #2c3e50;
+            --accent-cyan: #17a2b8;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos base y reseteo */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--secondary-bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Encabezado principal */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #00509e);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #001f3f;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0.5rem 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Botón de interacción */
+        .btn-theme {
+            background-color: var(--accent-cyan);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-theme:hover {
+            background-color: #138496;
+        }
+
+        /* Contenedor principal */
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Secciones de contenido */
+        section {
+            background-color: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--shadow);
+            scroll-margin-top: 80px; /* Para la navegación anclada */
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid var(--accent-cyan);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sistema de cuadrícula para tarjetas */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 5px solid var(--accent-cyan);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #001f3f;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        /* Tema Oscuro (Dark Mode) */
+        body.dark-mode {
+            --primary-blue: #66b2ff;
+            --secondary-bg: #121212;
+            --text-dark: #e0e0e0;
+            --white: #1e1e1e;
+            --shadow: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            border-bottom: 1px solid #333;
+        }
+
+        body.dark-mode nav, body.dark-mode footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid #333;
+        }
+
+        body.dark-mode .card {
+            background-color: #2a2a2a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tecnología y Sociedad</h1>
+        <p>Redefiniendo las Relaciones Humanas en el Entorno Digital</p>
+    </header>
+
+    <nav>
+        <a href="#introduccion">Introducción</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#desafios">Desafíos Críticos</a>
+        <a href="#tendencias">Perspectiva 2026</a>
+        <button id="toggle-theme" class="btn-theme">Activar Modo Oscuro</button>
+    </nav>
+
+    <main>
+        <section id="introduccion">
+            <h2>El Paradigma de la Comunicación Digital</h2>
+            <p>La integración de las Tecnologías de la Información y la Comunicación (TIC) en la vida diaria ha transformado radicalmente la estructura de las interacciones humanas. Ya no nos limitamos a utilizar herramientas digitales para enviar mensajes; habitamos ecosistemas virtuales complejos que moldean nuestra identidad, nuestras opiniones y nuestra forma de vincularnos con los demás.</p>
+            <p>Este trabajo analiza cómo la mediación tecnológica actúa como un puente que elimina distancias físicas, pero simultáneamente introduce nuevas dinámicas psicológicas y sociales que requieren un análisis profundo y objetivo.</p>
+        </section>
+
+        <section id="beneficios">
+            <h2>Beneficios de la Conectividad Global</h2>
+            <p>El desarrollo de infraestructuras de red avanzadas y dispositivos móviles ha democratizado el acceso a la socialización en múltiples niveles:</p>
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Preservación de Vínculos a Distancia</h3>
+                    <p>Las plataformas de videollamada de alta fidelidad y la mensajería asíncrona permiten mantener relaciones interpersonales estrechas sin importar las barreras geográficas, facilitando la cohesión familiar y profesional.</p>
+                </div>
+                <div class="card">
+                    <h3>Comunidades de Interés Específico</h3>
+                    <p>Internet proporciona espacios seguros donde los individuos pueden encontrar grupos afines basados en intereses, aficiones o necesidades de apoyo mutuo que serían difíciles de localizar en su entorno físico inmediato.</p>
+                </div>
+                <div class="card">
+                    <h3>Expansión del Capital Social</h3>
+                    <p>Las redes profesionales digitales permiten la creación de lazos débiles pero numerosos, los cuales son fundamentales para el intercambio de conocimientos, el desarrollo académico y las oportunidades laborales.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafios">
+            <h2>Desafíos y Consecuencias Subyacentes</h2>
+            <p>El análisis desde la perspectiva de las TIC no estaría completo sin abordar las fricciones que surgen cuando la tecnología intermedia constantemente en el tejido social:</p>
+            <ul>
+                <li><strong>La Paradoja de la Soledad Conectada:</strong> A pesar de estar en constante comunicación técnica, los individuos pueden experimentar un aislamiento emocional severo si las interacciones digitales carecen de profundidad empática.</li>
+                <li><strong>El Efecto de las Cámaras de Eco:</strong> Los algoritmos de recomendación, diseñados para retener la atención del usuario, tienden a mostrar únicamente contenido que refuerza las creencias preexistentes, reduciendo la tolerancia hacia perspectivas divergentes y polarizando a la sociedad.</li>
+                <li><strong>Presión de la Huella Digital:</strong> La gestión continua de la identidad en línea y la exposición pública de los logros personales generan fenómenos de comparación constante, impactando negativamente en la autoestima de las poblaciones más vulnerables.</li>
+            </ul>
+        </section>
+
+        <section id="tendencias">
+            <h2>Perspectivas y Tendencias en 2026</h2>
+            <p>En el contexto del año 2026, observamos una evolución hacia un uso más consciente e integrado de las herramientas digitales. La sociedad y la industria tecnológica están implementando respuestas a los desafíos de la década anterior:</p>
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Bienestar Digital Integrado</h3>
+                    <p>Los dispositivos ahora incluyen análisis de hábitos en tiempo real que fomentan la "desconexión consciente", promoviendo interacciones físicas y limitando el diseño adictivo de las aplicaciones.</p>
+                </div>
+                <div class="card">
+                    <h3>Interacción Asistida por Inteligencia Artificial</h3>
+                    <p>La IA ha pasado de ser una herramienta de consulta a un mediador en las relaciones sociales, ayudando a organizar encuentros, traducir idiomas en tiempo real y moderar entornos virtuales para reducir la toxicidad.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Proyecto Escolar de TIC. Material desarrollado con fines académicos.</p>
+        <p>Asignatura: Tecnologías de la Información y la Comunicación.</p>
+    </footer>
+
+    <script>
+        // Lógica de JavaScript para el botón de Modo Oscuro/Claro
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeButton = document.getElementById('toggle-theme');
+            const bodyElement = document.body;
+
+            themeButton.addEventListener('click', () => {
+                // Alterna la clase 'dark-mode' en la etiqueta body
+                bodyElement.classList.toggle('dark-mode');
+                
+                // Cambia el texto del botón según el estado actual
+                if (bodyElement.classList.contains('dark-mode')) {
+                    themeButton.textContent = 'Activar Modo Claro';
+                    themeButton.style.backgroundColor = '#66b2ff';
+                    themeButton.style.color = '#121212';
+                } else {
+                    themeButton.textContent = 'Activar Modo Oscuro';
+                    themeButton.style.backgroundColor = 'var(--accent-cyan)';
+                    themeButton.style.color = 'var(--white)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
